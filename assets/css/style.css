@@ -584,8 +584,15 @@ footer p {
 
     .hero {
         flex-direction: column;
-        padding: 100px 5% 50px;
+        padding: 40px 5% 20px; /* Diminui o espaçamento vertical */
         text-align: center;
+        min-height: auto;     /* Remove o min-height fixo */
+    }
+    hero::before {
+        top: 5%;
+        width: 150px;    /* Menor largura do efeito */
+        height: 150px;   /* Menor altura do efeito */
+        transform: translateX(-50%) translateY(-5px);
     }
 
     .typewriter-container {
@@ -604,21 +611,21 @@ footer p {
     }
 
     .hero-img {
-        order: -1;
-        max-width: 300px;
+        max-width: 250px;
         margin-bottom: 20px;
-    }
-
-    .intro-text {
-        padding: 0 20px;
+        order: -1; /* Se quiser que a imagem fique acima do texto */
     }
 
     .intro-text h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .intro-text h2 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+    }
+
+    .intro-text p {
+        font-size: 0.9rem;
     }
 
     .intro-text p {
