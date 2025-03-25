@@ -1,19 +1,24 @@
+
 body {
-    font-family: 'poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #1E1E2E;
     color: #EAEAEA;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-header{
 
+header {
     position: fixed;
     top: 20px;
     left: 50%;
@@ -22,6 +27,7 @@ header{
     z-index: 1000;
     justify-content: center;
 }
+
 
 nav {
     display: flex;
@@ -37,7 +43,7 @@ nav {
     0px 0px 20px rgba(138, 43, 226, 0.4);
 }
 
-.menu{
+.menu {
     display: flex;
     gap: 30px;
     padding: 0;
@@ -66,7 +72,7 @@ nav {
 }
 
 
-.hero{
+.hero {
     position: relative;
     display: flex;
     align-items: center;
@@ -92,25 +98,25 @@ nav {
     animation: floatingGlow 5s infinite alternate ease-in-out;
 }
 
-.intro-text{
+.intro-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     max-width: 800px;
 }
 
-.intro-text h1{
+.intro-text h1 {
     font-size: 4rem;
     font-weight: bold;
     margin-bottom: 10px;
     line-height: 1.2;
 }
 
-.intro-text h1 span{
+.intro-text h1 span {
     color: #00D4FF;
 }
 
-.intro-text h2{
+.intro-text h2 {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 20px;
@@ -167,7 +173,6 @@ nav {
     overflow: hidden;
 }
 
-
 .typewriter {
     display: inline-block;
     font-size: 2rem;
@@ -183,7 +188,7 @@ nav {
     animation: typingEffect 10s steps(38) infinite, blinkCursor 0.8s step-end infinite;
 }
 
-
+/* Ícones Sociais */
 .social-icons {
     display: flex;
     gap: 15px;
@@ -213,7 +218,8 @@ nav {
     background: #00D4FF;
 }
 
-.timeline-section{
+
+.timeline-section {
     padding: 100px 5%;
     background: linear-gradient(135deg, #1E1E2E 65%, #8A2BE2 100%);
     color: #EAEAEA;
@@ -223,7 +229,7 @@ nav {
     0 0 100px rgba(0, 212, 255, 0.2);
 }
 
-.timeline-section h2{
+.timeline-section h2 {
     text-align: center;
     font-size: 3rem;
     margin-bottom: 80px;
@@ -233,14 +239,14 @@ nav {
     color: #00D4FF;
 }
 
-.timeline-container{
+.timeline-container {
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.timeline-container::before{
+.timeline-container::before {
     content: "";
     position: absolute;
     top: 0;
@@ -251,7 +257,7 @@ nav {
     transform: translateX(-50%);
 }
 
-.timeline-item{
+.timeline-item {
     position: relative;
     width: 50%;
     padding: 20px 40px;
@@ -261,7 +267,7 @@ nav {
     box-shadow: none;
 }
 
-.timeline-item.left{
+.timeline-item.left {
     left: 0;
     text-align: right;
 }
@@ -505,6 +511,7 @@ nav {
     background-color: #00b4cc;
 }
 
+
 footer {
     display: flex;
     justify-content: space-between;
@@ -520,6 +527,8 @@ footer {
 footer p {
     margin: 5px 0;
 }
+
+
 @keyframes floatingGlow {
     0% {
         transform: translateX(-50%) translateY(-20px);
@@ -530,7 +539,6 @@ footer p {
         opacity: 0.4;
     }
 }
-
 
 @keyframes typingEffect {
     0% {
@@ -546,6 +554,7 @@ footer p {
         width: 0;
     }
 }
+
 @keyframes blinkCursor {
     0%, 100% { border-right-color: transparent; }
     50% { border-right-color: #00D4FF; }
@@ -557,13 +566,9 @@ footer p {
 
 @media (max-width: 768px) {
 
-
     header {
-        position: static;
-        transform: none;
-        padding: 10px 0;
+        display: none;
     }
-
 
     nav {
         flex-direction: column;
@@ -571,32 +576,31 @@ footer p {
         margin-bottom: 20px;
     }
 
-
     .menu {
-        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
     }
-
 
     .hero {
         flex-direction: column;
         padding: 100px 5% 50px;
         text-align: center;
     }
+
     .typewriter-container {
         display: block;
         width: 90%;
         max-width: 65ch;
         margin: 0 auto;
         text-align: left;
-
     }
 
     .typewriter {
         position: static;
         transform: none;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         border-right-width: 1px;
-
     }
 
     .hero-img {
@@ -621,27 +625,32 @@ footer p {
         font-size: 1rem;
     }
 
-
     .timeline-section,
     .skills-section,
     .projects-section,
     .contact-section {
         padding: 50px 5%;
     }
-
-
     .timeline-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
         left: 10px;
+        width: 4px;
+        background: #00D4FF;
     }
-
     .timeline-item {
         width: 100%;
-        padding: 20px;
+        padding: 20px 40px;
+        margin-left: 60px;
+        text-align: left;
     }
-
     .timeline-item.left,
     .timeline-item.right {
-        text-align: left;
         left: 0;
+    }
+    .timeline-item::before {
+        left: -60px !important;
     }
 }
